@@ -1,8 +1,13 @@
 package units;
 
-public class Shooter extends BaseHero{
+public abstract class Shooter extends BaseHero{
     /**Боеприпасы*/
-    private int ammunition;
+    protected int ammunition;
+
+    public Shooter(String heroID, int health, int endurance, int speed, int ammunition) {
+        super(heroID, health, endurance, speed);
+        this.ammunition = ammunition;
+    }
 
     protected boolean aiming() {
         if (endurance < 100) {
