@@ -1,14 +1,23 @@
 package units;
 
+/**
+ * Крестьянин
+ */
 public class Villager extends BaseHero {
-    private int seeds;
 
-    public Villager(String heroID) {
-        super(heroID, 32, 43, 54);
-        this.seeds = 23;
+
+    public Villager(String name) {
+        super(name, 10, 10, 1, 2, 3, 4, 5);
     }
+
     @Override
     public String getInfo() {
-        return "Крестьянин " + heroID;
+        return "Фермер " + name; // крестьянин
+    }
+
+    @Override
+    public void step() {
+        System.out.println("Ну, я пошел...");
+        // если не труп то state = "Stand"
     }
 }

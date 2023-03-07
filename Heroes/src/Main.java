@@ -1,21 +1,51 @@
 import units.*;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        Sniper name1 = new Sniper("Tom1");
-        System.out.println(name1.getInfo());
-        Arbalester name2 = new Arbalester("Tom2");
-        System.out.println(name2.getInfo());
-        Spearman name3 = new Spearman("Tom3");
-        System.out.println(name3.getInfo());
-        Raider name4 = new Raider("Tom4");
-        System.out.println(name4.getInfo());
-        Magician name5 = new Magician("Tom5");
-        System.out.println(name5.getInfo());
-        Monarch name6 = new Monarch("Tom6");
-        System.out.println(name6.getInfo());
-        Villager name7 = new Villager("Tom7");
-        System.out.println(name7.getInfo());
+
+        ArrayList<BaseHero> redTeam = new ArrayList<>();
+        int sizeTeam = 10, unit = 0;
+        Random rand = new Random();
+
+        while (unit++ < sizeTeam) {
+            switch (rand.nextInt(7)) {
+                case 0:
+                    redTeam.add(new Sniper(getName()));
+                    break;
+                case 1:
+                    redTeam.add(new Raider(getName()));
+                    break;
+                case 2:
+                    redTeam.add(new Magician(getName()));
+                    break;
+                case 3:
+                    redTeam.add(new Villager(getName()));
+                    break;
+                case 4:
+                    redTeam.add(new Arbalester(getName()));
+                    break;
+                case 5:
+                    redTeam.add(new Spearman(getName()));
+                    break;
+                case 6:
+                    redTeam.add(new Druid(getName()));
+                    break;
+            }
+        }
+
+        for (BaseHero hero : redTeam) {
+            System.out.println(hero.getInfo());
+        }
 
     }
+
+
+    private static String getName() {
+        return String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
+    }
 }
+
+

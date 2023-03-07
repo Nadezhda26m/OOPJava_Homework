@@ -1,12 +1,15 @@
 package units;
 
+/**
+ * Разбойник
+ */
 public class Raider extends Warrior {
 
-    public Raider(String heroID) {
-        super(heroID, 21, 32, 43, 54);
+    public Raider(String name) {
+        super(name, 10, 10, 1, 2, 3, 4, 5, 6);
     }
     @Override
     public String getInfo() {
-        return "Разбойник " + heroID;
+        return "Разбойник " + name;
     }
 }

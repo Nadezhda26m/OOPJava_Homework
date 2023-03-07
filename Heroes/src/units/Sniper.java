@@ -1,12 +1,20 @@
 package units;
 
+/**
+ * Снайпер
+ */
 public class Sniper extends Shooter {
 
-    public Sniper(String heroID) {
-        super(heroID, 10, 20, 30, 40);
+
+    public Sniper(String name) {
+        super(name, 10, 10, 1, 2, 3, 4, 5, 6);
     }
+
+
     @Override
     public String getInfo() {
-        return "Снайпер " + heroID;
+        return "Снайпер " + name;
     }
+
+
 }

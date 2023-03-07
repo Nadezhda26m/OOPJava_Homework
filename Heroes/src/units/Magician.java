@@ -1,12 +1,15 @@
 package units;
 
+/**
+ * Колдун
+ */
 public class Magician extends Priest {
 
-    public Magician(String heroID) {
-        super(heroID, 12, 23, 34, 45);
+    public Magician(String name) {
+        super(name, 10, 10, 1, 2, 3, 4, 5, 6);
     }
     @Override
     public String getInfo() {
-        return "Колдун " + heroID;
+        return "Чародей " + name; // Колдун
     }
 }
