@@ -7,11 +7,18 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<BaseHero> redTeam = new ArrayList<>();
+        ArrayList<BaseHero> greenTeam = new ArrayList<>();
         int sizeTeam = 10, unit = 0;
         Random rand = new Random();
+        int newUnit;
 
-        while (unit++ < sizeTeam) {
-            switch (rand.nextInt(7)) {
+        while (unit < sizeTeam * 2) {
+            if (unit++ < sizeTeam) {
+                newUnit = rand.nextInt(4);
+            } else {
+                newUnit = rand.nextInt(4, 8);
+            }
+            switch (newUnit) {
                 case 0:
                     redTeam.add(new Sniper(getName()));
                     break;
@@ -25,21 +32,28 @@ public class Main {
                     redTeam.add(new Villager(getName()));
                     break;
                 case 4:
-                    redTeam.add(new Arbalester(getName()));
+                    greenTeam.add(new Arbalester(getName()));
                     break;
                 case 5:
-                    redTeam.add(new Spearman(getName()));
+                    greenTeam.add(new Spearman(getName()));
                     break;
                 case 6:
-                    redTeam.add(new Druid(getName()));
+                    greenTeam.add(new Druid(getName()));
+                    break;
+                case 7:
+                    greenTeam.add(new Villager(getName()));
                     break;
             }
         }
 
-        for (BaseHero hero : redTeam) {
-            System.out.println(hero.getInfo());
-        }
+        ArrayList<BaseHero> commonList = new ArrayList<>(redTeam);
+        commonList.addAll(greenTeam);
+        commonList.sort(new SpeedSort());
 
+        commonList.forEach(n -> System.out.println(n.getInfo()));
+        // for (BaseHero hero : commonList) {
+        //     System.out.println(hero.getInfo());
+        // }
     }
 
 

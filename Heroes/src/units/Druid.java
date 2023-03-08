@@ -1,17 +1,24 @@
 package units;
 
 /**
- * Монарх
+ * Монах
  */
 public class Druid extends Priest {
+
     public Druid(String name) {
-        super(name, 10, 10, 1, 2, 3, 4, 5, 6);
+        super(name, 30, 30, 12, -4, -4,
+                7, 5, 10);
     }
-
-
 
     @Override
     public String getInfo() {
-        return "Друид " + name; // Монарх
+        return "Друид " + name +
+                " speed:" + speed +
+                " hp:" + hp;
+    }
+
+    @Override
+    public String getUnitName() {
+        return "Друид " + name;
     }
 }

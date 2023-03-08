@@ -21,10 +21,17 @@ public abstract class BaseHero implements Interf {
     }
 
     @Override
-    public void step() {}
+    public void step() {
+    }
 
     @Override
     public String getInfo() {
         return "null";
     }
+
+    @Override
+    public String getUnitName() {
+        return "null";
+    }
+
 }
