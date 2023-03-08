@@ -1,6 +1,6 @@
 package units;
 
-public abstract class BaseHero implements Interf {
+public abstract class BaseHero implements Interf, Comparable<BaseHero> {
     protected static int heroID = 1;
     protected String name;
     protected int hp, maxHp;
@@ -32,6 +32,12 @@ public abstract class BaseHero implements Interf {
     @Override
     public String getUnitName() {
         return "null";
+    }
+
+    @Override
+    public int compareTo(BaseHero o) {
+        if(o.speed == this.speed) return o.hp - this.hp;
+        else return o.speed - this.speed;
     }
 
 }

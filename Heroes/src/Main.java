@@ -1,6 +1,7 @@
 import units.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Main {
@@ -48,12 +49,9 @@ public class Main {
 
         ArrayList<BaseHero> commonList = new ArrayList<>(redTeam);
         commonList.addAll(greenTeam);
-        commonList.sort(new SpeedSort());
+        Collections.sort(commonList);
 
         commonList.forEach(n -> System.out.println(n.getInfo()));
-        // for (BaseHero hero : commonList) {
-        //     System.out.println(hero.getInfo());
-        // }
     }
 
 
