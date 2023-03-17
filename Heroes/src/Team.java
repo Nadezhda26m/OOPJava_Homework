@@ -6,13 +6,13 @@ import java.util.Random;
 
 public class Team {
 
-    public static ArrayList<BaseHero> createTeam(int side, int sizeTeam) {
-        if (side == 1) return createTeam(side, sizeTeam, 1, 0, 4);
-        return createTeam(side, sizeTeam, 10, 3, 7);
+    public static ArrayList<BaseHero> create(int side, int sizeTeam) {
+        if (side == 1) return create(side, sizeTeam, 1, 0, 4);
+        return create(side, sizeTeam, 10, 3, 7);
     }
 
-    private static ArrayList<BaseHero> createTeam(int side, int sizeTeam, int coordX,
-                                                  int randMin, int randMax) {
+    private static ArrayList<BaseHero> create(int side, int sizeTeam, int coordX,
+                                              int randMin, int randMax) {
         ArrayList<BaseHero> team = new ArrayList<>();
         Random rand = new Random();
         int count = 0, unit;
@@ -36,31 +36,31 @@ public class Team {
     }
 
     // Вывод полной информации о героях
-    public static void printTeamInfo(ArrayList<BaseHero> team) {
+    public static void printFullInfo(ArrayList<BaseHero> team) {
         team.forEach(n -> System.out.println(n.getInfo()));
     }
 
     // Вывод типа и имени героя
-    public static void printTeamUnits(ArrayList<BaseHero> team) {
+    public static void printUnits(ArrayList<BaseHero> team) {
         team.forEach(n -> System.out.println(n.getUnitName()));
     }
 
-    public static ArrayList<BaseHero> mergeTeams(ArrayList<BaseHero> team1,
-                                                 ArrayList<BaseHero> team2) {
+    public static ArrayList<BaseHero> merge(ArrayList<BaseHero> team1,
+                                            ArrayList<BaseHero> team2) {
         ArrayList<BaseHero> commonList = new ArrayList<>(team1);
         commonList.addAll(team2);
         return commonList;
     }
 
-    public static void doStep(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2,
-                              ArrayList<BaseHero> commonList) {
-        commonList.forEach(n -> n.step(team1, team2));
-        Collections.sort(commonList);
-        System.out.println("redTeam");
-        Collections.sort(team1);
-        printTeamInfo(team1);
-        System.out.println("greenTeam");
-        Collections.sort(team2);
-        printTeamInfo(team2);
+    public static void sort(ArrayList<BaseHero> team) {
+        Collections.sort(team);
     }
+
+    public static boolean isLoser(ArrayList<BaseHero> team) {
+        for (BaseHero hero : team) {
+            if (!hero.getState().equals("Die")) return false;
+        }
+        return true;
+    }
+
 }

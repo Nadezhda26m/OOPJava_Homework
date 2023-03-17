@@ -6,7 +6,7 @@ package units;
 public class Sniper extends Shooter {
 
     public Sniper(String name, int team, int coordX, int coordY) {
-        super(name, 15, 15, 12, 8, 10,
+        super(name, 30, 30, 12, 8, 10,
                 10, 9, 32, team, coordX, coordY);
     }
 

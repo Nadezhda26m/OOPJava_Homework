@@ -25,8 +25,12 @@ public abstract class BaseHero implements Interf, Comparable<BaseHero> {
         coord = new Point2D(coordX, coordY);
     }
 
+    public String getState() {
+        return state;
+    }
+
     @Override
-    public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
     }
 
     @Override
@@ -45,5 +49,24 @@ public abstract class BaseHero implements Interf, Comparable<BaseHero> {
         return o.speed - this.speed;
     }
 
+    protected int findNearest(ArrayList<BaseHero> team) {
+        double minDist = 1000;
+        int index = 0;
+        for (int i = 0; i < team.size(); i++) {
+            if (team.get(i).hp > 0 && coord.getDistance(team.get(i).coord) < minDist) {
+                minDist = coord.getDistance(team.get(i).coord);
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    protected void getDamage(float damage) {
+        this.hp -= damage;
+        if (hp <= 0) {
+            hp = 0;
+            state = "Die";
+        } else if (hp > maxHp) hp = maxHp;
+    }
 
 }

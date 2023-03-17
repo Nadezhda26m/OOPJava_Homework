@@ -12,7 +12,30 @@ public abstract class Priest extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
-        // System.out.println("Ход жреца");
+    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
+        // сделать восстановление маны
+        if (state.equals("Die") || mana == 0) return;
+        BaseHero target = getIll(friend);
+        if (getDamageCondition(target) > 0.2f || target.hp - damageMax <= target.maxHp) {
+            target.getDamage(damageMax);
+            mana--;
+        }
+    }
+
+    private BaseHero getIll(ArrayList<BaseHero> team) {
+        int index = 0;
+        float badCondition = 0;
+        for (int i = 0; i < team.size(); i++) {
+            if (!team.get(i).state.equals("Die")
+                    && getDamageCondition(team.get(i)) > badCondition) {
+                badCondition = getDamageCondition(team.get(i));
+                index = i;
+            }
+        }
+        return team.get(index);
+    }
+
+    private float getDamageCondition(BaseHero hero) {
+        return (float) ((hero.maxHp - hero.hp) / hero.maxHp);
     }
 }

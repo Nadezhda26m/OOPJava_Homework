@@ -6,7 +6,7 @@ package units;
 public class Raider extends Warrior {
 
     public Raider(String name, int team, int coordX, int coordY) {
-        super(name, 10, 10, 8, 2, 4,
+        super(name, 40, 40, 8, 2, 4,
                 3, 6, team, coordX, coordY);
     }
 

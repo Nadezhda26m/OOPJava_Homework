@@ -6,7 +6,7 @@ package units;
 public class Spearman extends Warrior {
 
     public Spearman(String name, int team, int coordX, int coordY) {
-        super(name, 10, 10, 1, 2, 3,
+        super(name, 40, 40, 1, 2, 3,
                 4, 4, team, coordX, coordY);
     }
 

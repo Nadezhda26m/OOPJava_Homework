@@ -9,7 +9,7 @@ public class Villager extends BaseHero {
 
 
     public Villager(String name, int team, int coordX, int coordY) {
-        super(name, 1, 1, 1, 1, 1,
+        super(name, 5, 5, 1, 1, 1,
                 1, 3, team, coordX, coordY);
     }
 
@@ -28,10 +28,8 @@ public class Villager extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
-        if (state.equals("Die")) return;
-        state = "Stand";
+    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
+        if (!state.equals("Die")) state = "Stand";
     }
-
 
 }

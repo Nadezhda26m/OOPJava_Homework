@@ -10,7 +10,7 @@ public abstract class Warrior extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
         // System.out.println("Ход воина");
     }
 }
