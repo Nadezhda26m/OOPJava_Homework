@@ -15,14 +15,14 @@ public abstract class Priest extends BaseHero {
     public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
         // сделать восстановление маны
         if (state.equals("Die") || mana == 0) return;
-        BaseHero target = getIll(friend);
+        BaseHero target = getWounded(friend);
         if (getDamageCondition(target) > 0.2f || target.hp - damageMax <= target.maxHp) {
             target.getDamage(damageMax);
             mana--;
         }
     }
 
-    private BaseHero getIll(ArrayList<BaseHero> team) {
+    private BaseHero getWounded(ArrayList<BaseHero> team) {
         int index = 0;
         float badCondition = 0;
         for (int i = 0; i < team.size(); i++) {

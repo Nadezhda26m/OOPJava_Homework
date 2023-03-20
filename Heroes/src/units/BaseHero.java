@@ -69,4 +69,8 @@ public abstract class BaseHero implements Interf, Comparable<BaseHero> {
         } else if (hp > maxHp) hp = maxHp;
     }
 
+    public int[] getCoord() {
+        return new int[]{coord.x, coord.y};
+    }
+
 }
