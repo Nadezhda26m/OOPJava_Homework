@@ -56,11 +56,16 @@ public class Team {
         Collections.sort(team);
     }
 
-    public static boolean isLoser(ArrayList<BaseHero> team) {
+    private static boolean isLoser(ArrayList<BaseHero> team) {
         for (BaseHero hero : team) {
             if (!hero.getState().equals("Die")) return false;
         }
         return true;
     }
 
+    public static int findWinner(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+        if (isLoser(team1)) return 2;
+        if (isLoser(team2)) return 1;
+        return 0;
+    }
 }
