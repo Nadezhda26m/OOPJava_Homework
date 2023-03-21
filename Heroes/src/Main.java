@@ -15,27 +15,22 @@ public class Main {
         Team.sort(commonList);
         Team.printFullInfo(commonList);
 
-        String stop = "";
-
+        int winner;
         Scanner scan = new Scanner(System.in);
-        while (stop.equals("")) {
+        while (true) {
             View.view();
             for (BaseHero hero : commonList) {
                 if (redTeam.contains(hero)) hero.step(redTeam, greenTeam);
                 else hero.step(greenTeam, redTeam);
             }
-            if (Team.isLoser(redTeam)) {
-                View.view();
-                System.out.println(">Победила команда greenTeam");
-                break;
-            } else if (Team.isLoser(greenTeam)) {
-                View.view();
-                System.out.println(">Победила команда redTeam");
-                break;
-            }
+            winner = Team.findWinner(redTeam, greenTeam);
+            if (winner != 0) break;
             Team.sort(commonList);
-            stop = scan.nextLine();
+            scan.nextLine();
         }
+        View.view();
+        if (winner == 1) System.out.println(">Победила команда redTeam");
+        else System.out.println(">Победила команда greenTeam");
         System.out.println("Конец игры");
     }
 }
