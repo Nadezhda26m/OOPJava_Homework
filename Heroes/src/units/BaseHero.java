@@ -35,7 +35,11 @@ public abstract class BaseHero implements Interf, Comparable<BaseHero> {
 
     @Override
     public String getInfo() {
-        return "null";
+        return getUnitName().charAt(0) + " " + name +
+                " HP:" + hp +
+                " A:" + attack +
+                " D:" + defense +
+                " " + state;
     }
 
     @Override

@@ -11,15 +11,6 @@ public class Sniper extends Shooter {
     }
 
     @Override
-    public String getInfo() {
-        return "Снайпер " + name +
-                " speed:" + speed +
-                " hp:" + hp +
-                " state:" + state +
-                " стрелы:" + ammunition;
-    }
-
-    @Override
     public String getUnitName() {
         return "Снайпер " + name;
     }

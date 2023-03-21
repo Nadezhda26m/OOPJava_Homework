@@ -11,14 +11,6 @@ public class Raider extends Warrior {
     }
 
     @Override
-    public String getInfo() {
-        return "Разбойник " + name +
-                " speed:" + speed +
-                " hp:" + hp +
-                " state:" + state;
-    }
-
-    @Override
     public String getUnitName() {
         return "Разбойник " + name;
     }

@@ -44,4 +44,8 @@ public abstract class Shooter extends BaseHero {
         //         : (float) (damageMax + damageMin) / 2;
     }
 
+    @Override
+    public String getInfo() {
+        return super.getInfo() + " Shots:" + ammunition;
+    }
 }

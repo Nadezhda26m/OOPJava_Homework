@@ -11,14 +11,6 @@ public class Spearman extends Warrior {
     }
 
     @Override
-    public String getInfo() {
-        return "Копейщик " + name +
-                " speed:" + speed +
-                " hp:" + hp +
-                " state:" + state;
-    }
-
-    @Override
     public String getUnitName() {
         return "Копейщик " + name;
     }

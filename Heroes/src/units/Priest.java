@@ -12,6 +12,11 @@ public abstract class Priest extends BaseHero {
     }
 
     @Override
+    public String getInfo() {
+        return super.getInfo() + " Mana:" + mana;
+    }
+
+    @Override
     public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
         // сделать восстановление маны
         if (state.equals("Die") || mana == 0) return;

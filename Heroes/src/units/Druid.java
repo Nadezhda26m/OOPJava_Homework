@@ -11,14 +11,6 @@ public class Druid extends Priest {
     }
 
     @Override
-    public String getInfo() {
-        return "Друид " + name +
-                " speed:" + speed +
-                " hp:" + hp +
-                " state:" + state;
-    }
-
-    @Override
     public String getUnitName() {
         return "Друид " + name;
     }
