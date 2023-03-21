@@ -1,9 +1,6 @@
-package units;
-
-import units.BaseHero;
+package units.abstr;
 
 import java.util.ArrayList;
-import units.BaseHero.*;
 
 public abstract class Priest extends BaseHero {
     private int mana;

@@ -1,6 +1,6 @@
 package team;
 
-import units.*;
+import units.abstr.BaseHero;
 import units.priest.*;
 import units.shooter.*;
 import units.warrior.*;

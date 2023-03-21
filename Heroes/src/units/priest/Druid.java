@@ -1,5 +1,6 @@
 package units.priest;
-import units.Priest;
+
+import units.abstr.Priest;
 
 /**
  * Монах

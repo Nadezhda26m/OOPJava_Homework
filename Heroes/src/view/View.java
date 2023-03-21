@@ -1,6 +1,6 @@
 package view;
 
-import units.BaseHero;
+import units.abstr.BaseHero;
 import main.Main;
 
 import java.util.ArrayList;

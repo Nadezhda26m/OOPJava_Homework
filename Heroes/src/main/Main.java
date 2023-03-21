@@ -1,7 +1,7 @@
 package main;
 
-import units.*;
-import team.*;
+import units.abstr.BaseHero;
+import team.Team;
 import view.View;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package units;
+package units.abstr;
 
 public class Point2D {
     protected int x, y;

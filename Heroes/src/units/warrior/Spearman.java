@@ -1,6 +1,6 @@
 package units.warrior;
 
-import units.Warrior;
+import units.abstr.Warrior;
 
 /**
  * Копейщик
