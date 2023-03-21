@@ -1,4 +1,4 @@
-package units;
+package team;
 
 public enum Names {
     Вася, Оля, Коля, Дима, Петя, Соня, Андрей, Лиза, Ася, Толя, Вова, Игорь

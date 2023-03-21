@@ -1,4 +1,6 @@
-package units;
+package units.noncombat;
+
+import units.BaseHero;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,10 @@
+package team;
+
 import units.*;
+import units.priest.*;
+import units.shooter.*;
+import units.warrior.*;
+import units.noncombat.*;
 
 import java.util.ArrayList;
 import java.util.Collections;

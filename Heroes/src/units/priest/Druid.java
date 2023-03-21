@@ -1,4 +1,5 @@
-package units;
+package units.priest;
+import units.Priest;
 
 /**
  * Монах

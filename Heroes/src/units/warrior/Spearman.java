@@ -1,4 +1,6 @@
-package units;
+package units.warrior;
+
+import units.Warrior;
 
 /**
  * Копейщик

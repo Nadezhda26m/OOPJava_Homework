@@ -1,4 +1,7 @@
+package view;
+
 import units.BaseHero;
+import main.Main;
 
 import java.util.ArrayList;
 import java.util.Collections;

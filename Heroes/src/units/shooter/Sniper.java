@@ -1,4 +1,6 @@
-package units;
+package units.shooter;
+
+import units.Shooter;
 
 /**
  * Снайпер

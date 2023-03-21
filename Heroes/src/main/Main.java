@@ -1,10 +1,14 @@
+package main;
+
 import units.*;
+import team.*;
+import view.View;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static final int SIZE_TEAM = 8; // от 2
+    public static final int SIZE_TEAM = 8; // от 2
     public static ArrayList<BaseHero> redTeam, greenTeam, commonList;
 
     public static void main(String[] args) {
