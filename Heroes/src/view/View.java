@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class View {
-    private static int step = 1;
+    private static int step = 0;
     private static final int SIZE_TEAM = Main.SIZE_TEAM;
     private static final ArrayList<BaseHero> teamLeft = Main.redTeam;
     private static final ArrayList<BaseHero> teamRight = Main.greenTeam;
@@ -61,7 +61,9 @@ public class View {
     }
 
     public static void view() {
-        if (step == 1) {
+        if (step == 0) {
+            System.out.print(AnsiColors.ANSI_YELLOW + "Beginning" + AnsiColors.ANSI_RESET);
+        } else if (step == 1) {
             System.out.print(AnsiColors.ANSI_YELLOW + "First step" + AnsiColors.ANSI_RESET);
         } else {
             System.out.print(AnsiColors.ANSI_YELLOW + "Step: " + step + AnsiColors.ANSI_RESET);
