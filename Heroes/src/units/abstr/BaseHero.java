@@ -55,7 +55,7 @@ public abstract class BaseHero implements Interf, Comparable<BaseHero> {
 
     protected int findNearest(ArrayList<BaseHero> team) {
         double minDist = 1000;
-        int index = 0;
+        int index = -1;
         for (int i = 0; i < team.size(); i++) {
             if (team.get(i).hp > 0 && coord.getDistance(team.get(i).coord) < minDist) {
                 minDist = coord.getDistance(team.get(i).coord);
