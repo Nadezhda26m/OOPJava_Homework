@@ -10,10 +10,10 @@ public abstract class Warrior extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
-        if (state.equals("Die")) return;
+    public boolean step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
+        if (state.equals("Die")) return true;
         int index = findNearest(enemy);
-        if (index == -1) return; // все враги мертвы, но не все свои сходили
+        if (index == -1) return false; // все враги мертвы, но не все свои сходили
         BaseHero target = enemy.get(index);
         if (coord.getDistance(target.coord) < 2) {
             target.getDamage(calculateDamage(target.defense));
@@ -22,15 +22,17 @@ public abstract class Warrior extends BaseHero {
             if (Math.abs(way.y) > Math.abs(way.x)) {
                 if (way.y < 0 && noObstacle(coord.x, coord.y + 1, friend)) {
                     coord.y++;
-                    return;
+                    return false;
                 } else if (way.y > 0 && noObstacle(coord.x, coord.y - 1, friend)) {
                     coord.y--;
-                    return;
+                    return false;
                 }
-            } // лучше идти по X или есть препятствие
+            } // лучше идти по X или есть препятствие по Y
+            // (пропускает ход при наличии препятствия по X)
             if (way.x < 0 && noObstacle(coord.x + 1, coord.y, friend)) coord.x++;
             else if (way.x > 0 && noObstacle(coord.x - 1, coord.y, friend)) coord.x--;
         }
+        return false;
     }
 
     private float calculateDamage(int targetDefense) {

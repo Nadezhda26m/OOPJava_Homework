@@ -21,8 +21,9 @@ public class Villager extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
-        if (!state.equals("Die")) state = "Stand";
+    public boolean step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
+        if (state.equals("Die")) return true;
+        state = "Stand";
+        return false;
     }
-
 }

@@ -15,8 +15,8 @@ public abstract class Shooter extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
-        if (state.equals("Die")) return;
+    public boolean step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
+        if (state.equals("Die")) return true;
         for (BaseHero hero : friend) { // поиск фермера
             if (hero.getUnitName().charAt(0) == 'Ф'
                     && hero.state.equals("Stand")) {
@@ -31,6 +31,7 @@ public abstract class Shooter extends BaseHero {
             target.getDamage(calculateDamage(target.defense, coord.getDistance(target.coord)));
             ammunition--;
         }
+        return false;
     }
 
     private float calculateDamage(int targetDefense, double distance) {

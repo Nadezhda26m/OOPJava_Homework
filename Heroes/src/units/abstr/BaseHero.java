@@ -30,7 +30,8 @@ public abstract class BaseHero implements Interf, Comparable<BaseHero> {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
+    public boolean step(ArrayList<BaseHero> friend, ArrayList<BaseHero> enemy) {
+        return false;
     }
 
     @Override
@@ -49,7 +50,7 @@ public abstract class BaseHero implements Interf, Comparable<BaseHero> {
 
     @Override
     public int compareTo(BaseHero o) {
-        if(o.speed == this.speed) return o.hp - this.hp;
+        if (o.speed == this.speed) return o.hp - this.hp;
         return o.speed - this.speed;
     }
 
