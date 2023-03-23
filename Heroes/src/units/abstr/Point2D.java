@@ -12,4 +12,7 @@ public class Point2D {
         return Math.sqrt(Math.pow((x - opponent.x), 2) + Math.pow((y - opponent.y), 2));
     }
 
+    protected Point2D getWay(Point2D opponent) {
+        return new Point2D(x - opponent.x, y - opponent.y);
+    }
 }
