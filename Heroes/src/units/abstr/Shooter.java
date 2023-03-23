@@ -28,17 +28,22 @@ public abstract class Shooter extends BaseHero {
         int index = findNearest(enemy);
         if (ammunition > 0 && index != -1) {
             BaseHero target = enemy.get(index); // цель атаки
-            target.getDamage(calculateDamage(target.defense));
+            target.getDamage(calculateDamage(target.defense, coord.getDistance(target.coord)));
             ammunition--;
         }
     }
 
-    private float calculateDamage(int targetDefense) {
-        // добавить учет расстояния
-        int a = targetDefense - attack;
-        if (a < 0) return damageMax;
-        else if (a == 0) return (float) (damageMax + damageMin) / 2;
-        else return damageMin;
+    private float calculateDamage(int targetDefense, double distance) {
+        float damage;
+        if (targetDefense - attack < 0) damage = damageMax;
+        else if (targetDefense - attack == 0) damage = (float) (damageMax + damageMin) / 2;
+        else damage = damageMin;
+        if (distance < 3) damage += 2;
+        else if (distance > 6) {
+            if (damage >= 3) damage -= 2;
+            else damage = 1;
+        }
+        return damage;
 
         // return (targetDefense - attack) < 0 ? damageMax
         //         : (targetDefense - attack) > 0 ? damageMin
