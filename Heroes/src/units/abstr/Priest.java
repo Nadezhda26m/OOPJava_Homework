@@ -32,7 +32,7 @@ public abstract class Priest extends BaseHero {
         float badCondition = 0;
         for (int i = 0; i < team.size(); i++) {
             if (!team.get(i).state.equals("Die")
-                    && getDamageCondition(team.get(i)) > badCondition) {
+                    && getDamageCondition(team.get(i)) >= badCondition) {
                 badCondition = getDamageCondition(team.get(i));
                 index = i;
             }
