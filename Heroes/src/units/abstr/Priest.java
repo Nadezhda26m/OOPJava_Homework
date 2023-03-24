@@ -29,10 +29,10 @@ public abstract class Priest extends BaseHero {
 
     private BaseHero getWounded(ArrayList<BaseHero> team) {
         int index = 0;
-        float badCondition = 0;
+        float badCondition = -1;
         for (int i = 0; i < team.size(); i++) {
             if (!team.get(i).state.equals("Die")
-                    && getDamageCondition(team.get(i)) >= badCondition) {
+                    && getDamageCondition(team.get(i)) > badCondition) {
                 badCondition = getDamageCondition(team.get(i));
                 index = i;
             }
@@ -41,6 +41,6 @@ public abstract class Priest extends BaseHero {
     }
 
     private float getDamageCondition(BaseHero hero) {
-        return (float) ((hero.maxHp - hero.hp) / hero.maxHp);
+        return (hero.maxHp - hero.hp) / (float) hero.maxHp;
     }
 }
