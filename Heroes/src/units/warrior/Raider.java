@@ -8,7 +8,7 @@ import units.abstr.Warrior;
 public class Raider extends Warrior {
 
     public Raider(String name, int team, int coordX, int coordY) {
-        super(name, 40, 40, 8, 5, 9,
+        super(name, 50, 50, 8, 5, 9,
                 14, 6, team, coordX, coordY);
     }
 

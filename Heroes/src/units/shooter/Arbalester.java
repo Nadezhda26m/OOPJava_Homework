@@ -8,7 +8,7 @@ import units.abstr.Shooter;
 public class Arbalester extends Shooter {
 
     public Arbalester(String name, int team, int coordX, int coordY) {
-        super(name, 25, 25, 9, 4, 6,
+        super(name, 25, 25, 9, 5, 7,
                 7, 4, 16, team, coordX, coordY);
     }
 

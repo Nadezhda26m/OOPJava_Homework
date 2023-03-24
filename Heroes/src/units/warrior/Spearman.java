@@ -8,8 +8,8 @@ import units.abstr.Warrior;
 public class Spearman extends Warrior {
 
     public Spearman(String name, int team, int coordX, int coordY) {
-        super(name, 40, 40, 2, 3, 6,
-                10, 4, team, coordX, coordY);
+        super(name, 50, 50, 2, 3, 6,
+                12, 4, team, coordX, coordY);
     }
 
     @Override

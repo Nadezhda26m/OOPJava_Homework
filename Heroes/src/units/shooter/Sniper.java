@@ -9,7 +9,7 @@ public class Sniper extends Shooter {
 
     public Sniper(String name, int team, int coordX, int coordY) {
         super(name, 30, 30, 12, 5, 8,
-                5, 9, 32, team, coordX, coordY);
+                5, 9, 24, team, coordX, coordY);
     }
 
     @Override
