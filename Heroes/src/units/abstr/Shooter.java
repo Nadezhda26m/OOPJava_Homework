@@ -39,11 +39,13 @@ public abstract class Shooter extends BaseHero {
         if (targetDefense - attack < 0) damage = damageMax;
         else if (targetDefense - attack == 0) damage = (float) (damageMax + damageMin) / 2;
         else damage = damageMin;
+
         if (distance < 3) damage += 2;
-        else if (distance > 6) {
+        else if (distance > 6 && distance < 11) {
             if (damage >= 3) damage -= 2;
             else damage = 1;
-        }
+        } else if (distance >= 11 ) damage /= 2;
+
         return damage;
 
         // return (targetDefense - attack) < 0 ? damageMax
